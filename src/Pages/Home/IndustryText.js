@@ -2,7 +2,7 @@ import React from "react";
 
 const IndustryText = () => {
   return (
-    <div className="bg-[#574EFA] p-16 mt-16">
+    <div className="bg-primaryColor p-16 mt-16">
       <p className="font-inter font-[600] text-[14px] text-white">
         1% OF THE INDUSTRY
       </p>
@@ -12,7 +12,7 @@ const IndustryText = () => {
         have more than having roommate with similar interest.
       </h2>
 
-      <button className="text-[#574EFA] px-5 py-3 rounded-full bg-white font-inter text-[15px] font-[600] mt-11 border border-transparent  hover:border-white hover:border hover:bg-transparent hover:text-white">
+      <button className="text-primaryCobg-primaryColor px-5 py-3 rounded-full bg-white font-inter text-[15px] font-[600] mt-11 border border-transparent  hover:border-white hover:border hover:bg-transparent hover:text-white">
         Get Started
       </button>
     </div>

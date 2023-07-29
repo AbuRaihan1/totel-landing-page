@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import totelLogo from "../assets/images/totelLogo.png";
 import { GrNotification } from "react-icons/gr";
+import { Link } from "react-router-dom";
 import userAvatar from "../assets/images/image4.png";
-import './Header.css'
+import totelLogo from "../assets/images/totelLogo.png";
+import "./Header.css";
 const Header = () => {
   const navLinks = ["inbox", "Wishlist", "Reservation", "Listing"];
   return (
@@ -17,7 +17,7 @@ const Header = () => {
             <li className="p-5">
               <Link
                 href="#"
-                className=" text-black font-inter text-[14px] font-[600]"
+                className="hover:text-primaryColor text-black font-inter text-[14px] font-[600]"
               >
                 {link}
               </Link>
@@ -26,10 +26,13 @@ const Header = () => {
         </ul>
 
         <div className="flex  items-center gap-4">
-          <button className="px-5 py-3  border-2 font-inter text-[15px] font-[600] rounded-full hover:bg-indigo-700 hover:text-white hover:border-transparent">
+          <button className="px-5 py-3  border-2 font-inter text-[15px] font-[600] rounded-full hover:bg-primaryColor hover:text-white hover:border-transparent">
             Create Post
           </button>
-          <GrNotification color="red" className="cursor-pointer hover:bg-indigo-700 hover-icon border-2 h-12 w-12 rounded-full p-2" />
+          <GrNotification
+            color="red"
+            className="cursor-pointer hover:primaryColor hover-icon border-2 h-12 w-12 rounded-full p-2"
+          />
           <img
             src={userAvatar}
             alt=""
