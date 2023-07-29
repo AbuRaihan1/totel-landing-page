@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomePeople from "./HomePeople";
 import image1 from "../../../assets/images/image1.png";
 import image2 from "../../../assets/images/image2.png";
@@ -6,6 +6,53 @@ import image3 from "../../../assets/images/image3.png";
 import image4 from "../../../assets/images/image4.png";
 import verifedImg from "../../../assets/icons/verified.png";
 const HomePersons = () => {
+  const [showAll, setShowAll] = useState(false);
+  const [peopleToShow, setPeopleToShow] = useState(6);
+
+  const toggleShowAll = () => {
+    setShowAll((prevShowAll) => !prevShowAll);
+  };
+
+  const handleLoadMore = () => {
+    setShowAll(true);
+  };
+
+  const handleSeeLess = () => {
+    setShowAll(false);
+    setPeopleToShow(8);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Define your custom breakpoints based on your Tailwind CSS configuration
+      const breakpoints = {
+        sm: 640,
+        md: 768,
+        lg: 1024,
+        xl: 1280,
+      };
+
+      // Check the current screen width
+      const screenWidth = window.innerWidth;
+
+      // Set the number of people to show based on the screen width
+      if (screenWidth >= breakpoints.xl) {
+        setPeopleToShow(8);
+      } else {
+        setPeopleToShow(6);
+      }
+    };
+
+    // Call the handleResize function initially and on window resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const peoples = [
     {
       name: "Devid Johanson",
@@ -130,11 +177,35 @@ const HomePersons = () => {
   ];
 
   return (
-    <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  gap-8 p-10">
-      {peoples.map((people, idx) => (
-        <HomePeople key={idx} people={people} />
-      ))}
-    </div>
+    <>
+      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  gap-8 p-10">
+        {peoples
+          .slice(0, showAll ? peoples.length : peopleToShow)
+          .map((people, idx) => (
+            <HomePeople key={idx} people={people} />
+          ))}
+      </div>
+
+      <div className="block text-center m-auto">
+        {!showAll && (
+          <button
+            onClick={handleLoadMore}
+            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow"
+          >
+            Load more
+          </button>
+        )}
+
+        {showAll && (
+          <button
+            onClick={handleSeeLess}
+            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow"
+          >
+            See less
+          </button>
+        )}
+      </div>
+    </>
   );
 };
 
