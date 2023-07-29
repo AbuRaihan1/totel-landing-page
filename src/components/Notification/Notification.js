@@ -4,6 +4,7 @@ import mobileButton from "../../assets/icons/mobile-button.png";
 import star from "../../assets/icons/star.png";
 import mail from "../../assets/icons/mail.png";
 import NotificationContext from "../../context/Context";
+import './Notification.css'
 const Notification = () => {
   const notifications = [
     {
@@ -58,8 +59,11 @@ const Notification = () => {
   return (
     <>
       {showDialog && (
-        <div className="relative shadow-2xl">
-          <div className="bg-white absolute right-0 lg:top-1 z-10 lg:w-[520px] h-[446px] overflow-auto shadow-2xl w-full top-36">
+        <div className="fixed inset-0 bg-gray-500 opacity-50 z-5"></div>
+      )}
+      {showDialog && (
+        <div className="relative shadow-2xl ">
+          <div className="bg-white absolute right-0 lg:top-0 z-10 lg:w-[520px] h-[446px] overflow-auto shadow-2xl w-full top-36 rounded-lg">
             <div className=" flex items-center justify-between p-6">
               <p className="font-[500] text-2xl font-inter">Notification </p>
               <FaTimes
