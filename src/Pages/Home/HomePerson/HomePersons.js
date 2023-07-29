@@ -185,7 +185,7 @@ const HomePersons = () => {
         {!showAll && (
           <button
             onClick={handleLoadMore}
-            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow"
+            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow hover:bg-indigo-700 hover:text-white hover:border-transparent"
           >
             Load more
           </button>
@@ -194,7 +194,7 @@ const HomePersons = () => {
         {showAll && (
           <button
             onClick={handleSeeLess}
-            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow"
+            className="font-inter py-2 px-4 text-[#272D37] border-[#DAE0E6] border-2 rounded-full hover:shadow hover:bg-indigo-700 hover:text-white hover:border-transparent"
           >
             See less
           </button>
