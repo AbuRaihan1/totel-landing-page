@@ -24,7 +24,6 @@ const HomePersons = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Define your custom breakpoints based on your Tailwind CSS configuration
       const breakpoints = {
         sm: 640,
         md: 768,
@@ -32,10 +31,8 @@ const HomePersons = () => {
         xl: 1280,
       };
 
-      // Check the current screen width
       const screenWidth = window.innerWidth;
 
-      // Set the number of people to show based on the screen width
       if (screenWidth >= breakpoints.xl) {
         setPeopleToShow(8);
       } else {
@@ -43,11 +40,9 @@ const HomePersons = () => {
       }
     };
 
-    // Call the handleResize function initially and on window resize
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
