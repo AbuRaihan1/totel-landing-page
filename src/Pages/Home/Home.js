@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import HomePersons from "./HomePerson/HomePersons";
 
 const Home = () => {
-    return (
-        <div>
-            home
-            
-        </div>
-    );
+  return (
+    <div>
+      <HomePersons />
+    </div>
+  );
 };
 
 export default Home;
