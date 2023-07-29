@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer_link_style {
+  @apply text-[#5F6D7E] text-[16px] font-[500] link link-hover font-inter;
+}
