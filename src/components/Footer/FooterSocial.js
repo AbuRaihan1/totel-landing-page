@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import footerLogo from "../assets/images/totelLogo.png";
-import facebook from "../assets/icons/facebook.png";
-import google from "../assets/icons/google.png";
-import apple from "../assets/icons/apple.png";
-import instagram from "../assets/icons/instagram.png";
+import footerLogo from "../../assets/images/totelLogo.png";
+import facebook from "../../assets/icons/facebook.png";
+import google from "../../assets/icons/google.png";
+import apple from "../../assets/icons/apple.png";
+// import instagram from "../assets/icons/instagram.png";
+import instagram from '../../assets/icons/instagram.png'
 
 const FooterSocial = () => {
   return (

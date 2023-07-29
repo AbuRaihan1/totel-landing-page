@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import userAvatar from "../assets/images/image4.png";
-import totelLogo from "../assets/images/totelLogo.png";
+import userAvatar from "../../assets/images/image4.png";
+import totelLogo from "../../assets/images/totelLogo.png";
 import "./Header.css";
+import NotificationContext from "../../context/Context";
 const Header = () => {
+  const { setShowDialog } = useContext(NotificationContext);
+
+  const handleNotificationClick = () => {
+    setShowDialog(true);
+  };
+
   const navLinks = ["inbox", "Wishlist", "Reservation", "Listing"];
   return (
     <div className="px-10 bg-white shadow">
@@ -32,6 +39,7 @@ const Header = () => {
           <GrNotification
             color="red"
             className="cursor-pointer hover:primaryColor hover-icon border-2 h-12 w-12 rounded-full p-2"
+            onClick={handleNotificationClick}
           />
           <img
             src={userAvatar}
