@@ -25,6 +25,24 @@ const Notification = () => {
       notiTime: "3 hours ago",
     },
     {
+      icon: mail,
+      notiMessage: "You received a friend request.",
+      userName: "Mike Johnson",
+      notiTime: "3 hours ago",
+    },
+    {
+      icon: mail,
+      notiMessage: "You received a friend request.",
+      userName: "Mike Johnson",
+      notiTime: "3 hours ago",
+    },
+    {
+      icon: mail,
+      notiMessage: "You received a friend request.",
+      userName: "Mike Johnson",
+      notiTime: "3 hours ago",
+    },
+    {
       icon: star,
       notiMessage: "Reminder: Upcoming event tomorrow.",
       userName: "Alice Williams",
@@ -33,7 +51,6 @@ const Notification = () => {
   ];
 
   const { showDialog, setShowDialog } = useContext(NotificationContext);
-
   const handleDialogClose = () => {
     setShowDialog(false);
   };
@@ -41,13 +58,13 @@ const Notification = () => {
   return (
     <>
       {showDialog && (
-        <div className="relative">
-          <div className="bg-white absolute right-0 top-1 z-10 md:w-[586px] h-auto shadow-xl">
-            <div className="flex items-center justify-between p-6">
+        <div className="relative shadow-2xl">
+          <div className="bg-white absolute right-0 lg:top-1 z-10 lg:w-[520px] h-[446px] overflow-auto shadow-2xl w-full top-36">
+            <div className=" flex items-center justify-between p-6">
               <p className="font-[500] text-2xl font-inter">Notification </p>
               <FaTimes
                 onClick={handleDialogClose}
-                className="bg-gray-100 rounded-full p-3 h-10 cursor-pointer w-10"
+                className="bg-gray-100 hover:bg-gray-300 rounded-full p-3 h-10 cursor-pointer w-10"
               />
             </div>
 

@@ -1,4 +1,8 @@
-.hover-icon:hover {
-  /* Set the color for the icon on hover */
-  color: blue;
+
+.small_nav_links_style {
+  border-left: 3px solid transparent;
+}
+
+.small_nav_links_style:hover {
+  border-left: 3px solid #574efa;
 }
